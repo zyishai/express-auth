@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Edit Article &nbsp;
+    a(href="/")
+      small Home
+  form(method="POST" action="/article/" + article.url + "/update")
+    .form-group
+      .input-group
+        .input-group-prepend
+          .input-group-text Article's Title
+        input.form-control(name="title" value=article.title)
+    .form-group
+      .input-group
+        .input-group-prepend
+          .input-group-text Article's Content
+        input.form-control(name="text" value=article.text)
+    button.btn.btn-primary(type="submit") Update

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h4
+    a(href="/") Home
+  h1 Register
+  form(method="POST" action="/user/register")
+    .form-group
+      label(for="fullname") Fullname
+      input.form-control(type="text" id="fullname" name="fullname" placeholder="Enter your full name")
+    .form-group
+      label(for="username") Username
+      input.form-control(type="text" id="username" name="username" placeholder="Choose your username")
+    .form-group
+      label(for="password") Password
+      input.form-control(type="password" id="password" name="password" placeholder="Choose your password")
+    button.btn.btn-primary(type="submit") Register

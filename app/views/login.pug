@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h4
+    a(href="/") Home
+  h1 Login
+  form(method="POST" action="/user/login")
+    .form-group
+      label(for="username") Username
+      input.form-control(type="text" id="username" name="username" placeholder="Enter username")
+    .form-group
+      label(for="password") Password
+      input.form-control(type="password" id="password" name="password" placeholder="Enter password")
+    button.btn.btn-primary(type="submit") Login

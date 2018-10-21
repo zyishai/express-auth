@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  if err
+    .alert.alert-danger.alert-dismissible.fade.show(role="alert")
+      Error: #{err.message}
+      a.alert-link(href="/") go home
+      button.close(data-dismiss="alert" aria-label="Close")
+        span(aria-hidden="true") &times;
+  h1 New Article &nbsp;
+    small
+      a(href="/") Home
+  form(method="POST" action="/article/add")
+    .form-group
+      label(for="articleTitle") Article Title
+      input(class="form-control" id="articleTitle" name="title" placeholder="e.g: My Awesome Adventure to The East")
+    .form-group
+      label(for="articleContent") Article Content
+      textarea(class="form-control" id="articleContent" name="content" placeholder="e.g: Once upon a time...")
+    button.btn.btn-primary(type="submit") Create Article

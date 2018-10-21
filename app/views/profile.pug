@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .d-flex.flex-row.justify-content-between
+    h1 Welcome #{user.fullname}!
+    a.btn.btn-danger(href="/logout") Logout
+  .d-flex.flex-row.justify-content-between
+    h3 My Articles
+    a.btn.btn-info(href="/article/add") Add Article
+  ul
+    each article in articles
+      li
+        a(href="/article/" + article.url)= article.title

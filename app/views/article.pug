@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  if success
+      .alert.alert-success.alert-dismissible.fade.show(role="alert")
+        Article '#{article.title}' created successfully!
+        a.alert-link(href="/") go home
+        button.close(data-dismiss="alert" aria-label="Close")
+          span(aria-hidden="true") &times;
+  h1= article.title
+    small &nbsp;
+      a(href="/") Home
+  .d-flex.flex-row.justify-content-between
+    h3 By Anonymous
+    a.btn.btn-link(href=article.url + "/edit") Edit
+  p= article.text
